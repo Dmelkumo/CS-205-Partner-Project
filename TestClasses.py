@@ -5,53 +5,46 @@ from Trainer import Trainer
 from Gym import Gym
 import random
 
+
 class ClassesModuleTest(unittest.TestCase):
     def setUp(self):
-        pass
+        self.p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50, 2, 88)
     
     def test_pokemon_get_name(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        self.assertEqual("Pogachu", p.get_name())
+        self.assertEqual("Pogachu", self.p.get_name())
 
     def test_pokemon_get_primary_type(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        self.assertEqual(Type.ELECTRIC, p.get_primary_type())
+        self.assertEqual(Type.ELECTRIC, self.p.get_primary_type())
     
     def test_pokemon_get_secondary_type(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        self.assertEqual(Type.NONE, p.get_secondary_type())
+        self.assertEqual(Type.NONE, self.p.get_secondary_type())
     
     def test_pokemon_get_hp(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        self.assertEqual(50, p.get_hp())
+        self.assertEqual(50, self.p.get_hp())
     
     def test_pokemon_set_name(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        p.set_name("Pikachu")
-        self.assertEqual("Pikachu", p.get_name())
+        self.p.set_name("Pikachu")
+        self.assertEqual("Pikachu", self.p.get_name())
     
     def test_pokemon_set_primary_type(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        p.set_primary_type(Type.WATER)
-        self.assertEqual(Type.WATER, p.get_primary_type())
+        self.p.set_primary_type(Type.WATER)
+        self.assertEqual(Type.WATER, self.p.get_primary_type())
     
     def test_pokemon_set_secondary_type(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        p.set_secondary_type(Type.FIGHTING)
-        self.assertEqual(Type.FIGHTING, p.get_secondary_type())
+        self.p.set_secondary_type(Type.FIGHTING)
+        self.assertEqual(Type.FIGHTING, self.p.get_secondary_type())
     
     def test_pokemon_set_hp(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        p.set_hp(10)
-        self.assertEqual(10, p.get_hp())
+        self.p.set_hp(10)
+        self.assertEqual(10, self.p.get_hp())
     
     def test_pokemon_attack(self):
-        p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        self.assertIn(p.attack(), range(11))
+        self.assertIn(self.p.attack(), range(11))
     
     # Huh
     def test_pokemon_take_damage(self):
         pass
+
 
 if __name__ == '__main__':
     unittest.main()
