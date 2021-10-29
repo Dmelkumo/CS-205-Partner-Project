@@ -39,7 +39,7 @@ class ClassesModuleTest(unittest.TestCase):
         self.assertEqual(10, self.p.get_hp())
     
     def test_pokemon_attack(self):
-        self.assertIn(self.p.attack(), range(11))
+        self.assertIn(self.p.attack(), range(2, 21))
     
     # Huh
     def test_pokemon_take_damage(self):
