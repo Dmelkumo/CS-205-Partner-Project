@@ -102,6 +102,8 @@ class Pokemon:
 
     def take_damage(self, damage, other_type):
         effectiveness = self.type_chart[other_type][self.primary_type] * self.type_chart[other_type][self.secondary_type]
+        if damage * effectiveness >= self.get_hp():
+            self.set_hp(0)
         print("It deals " + str(damage * effectiveness) + " damage!")
         self.set_hp(self.hp - (damage * effectiveness))
 
