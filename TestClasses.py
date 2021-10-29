@@ -8,10 +8,10 @@ import random
 
 class ClassesModuleTest(unittest.TestCase):
     def setUp(self):
-        self.p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50, 2, 88)
+        self.p = Pokemon("Pl0rqachu", Type.ELECTRIC, Type.NONE, 50, 2, 88)
     
     def test_pokemon_get_name(self):
-        self.assertEqual("Pogachu", self.p.get_name())
+        self.assertEqual("Pl0rqachu", self.p.get_name())
 
     def test_pokemon_get_primary_type(self):
         self.assertEqual(Type.ELECTRIC, self.p.get_primary_type())
@@ -23,8 +23,8 @@ class ClassesModuleTest(unittest.TestCase):
         self.assertEqual(50, self.p.get_hp())
     
     def test_pokemon_set_name(self):
-        self.p.set_name("Pikachu")
-        self.assertEqual("Pikachu", self.p.get_name())
+        self.p.set_name("Pl0rqachu")
+        self.assertEqual("Pl0rqachu", self.p.get_name())
     
     def test_pokemon_set_primary_type(self):
         self.p.set_primary_type(Type.WATER)
