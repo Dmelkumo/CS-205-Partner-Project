@@ -43,11 +43,11 @@ class ClassesModuleTest(unittest.TestCase):
     
     def test_pokemon_attack(self):
         p = Pokemon("Pogachu", Type.ELECTRIC, Type.NONE, 50)
-        self.assertIn(p.attack(), range(10))
+        self.assertIn(p.attack(), range(11))
     
     # Huh
     def test_pokemon_take_damage(self):
         pass
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     unittest.main()
