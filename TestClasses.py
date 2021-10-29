@@ -48,3 +48,6 @@ class ClassesModuleTest(unittest.TestCase):
     # Huh
     def test_pokemon_take_damage(self):
         pass
+
+if '__name__' == '__main__':
+    unittest.main()
