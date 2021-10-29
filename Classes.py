@@ -186,8 +186,24 @@ class Gym:
         self.trainers = trainers
 
     # Getters
+    def get_name(self):
+        return self.name
+    
+    def get_badge(self):
+        return self.badge
+    
+    def get_trainers(self):
+        return self.trainers
 
     # Setters
+    def set_name(self, name):
+        self.name = name
+    
+    def set_badge(self, badge):
+        self.badge = badge
+
+    def set_trainers(self, trainers):
+        self.trainers = trainers
 
     # Battle
     def battle(self, trainer1, trainer2):
