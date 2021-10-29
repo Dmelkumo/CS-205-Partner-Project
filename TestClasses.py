@@ -1,5 +1,9 @@
 import unittest
-from Classes import *
+from enums import Type, Pokeball, Badge
+from Pokemon import Pokemon
+from Trainer import Trainer
+from Gym import Gym
+import random
 
 class ClassesModuleTest(unittest.TestCase):
     def setUp(self):
