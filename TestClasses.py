@@ -71,10 +71,11 @@ class ClassesModuleTest(unittest.TestCase):
         self.assertEqual(self.g.trainers[0].get_name(), "Sean")
     
     def test_gym_battle(self):
+        self.g.badge = Badge.DAVIDCITY
         t1 = Trainer("Sean", 99, [Pokemon("Pika", Type.ELECTRIC, Type.NONE, 100, 3, 50)], [Pokeball.MASTERBALL],
-            [Badge.SEANTOWN], False)
-        t2 = Trainer("David", 1, [Pokemon("Weakling", Type.WATER, Type.NONE, 4, 4, 40)], [], [], False)
-        self.assertEqual("Sean", self.g.battle(t1, t2, False).get_name())
+            [], False)
+        t2 = Trainer("David", 1, [Pokemon("Weakling", Type.WATER, Type.NONE, 4, 4, 40)], [], [], True)
+        self.assertEqual([Badge.DAVIDCITY], self.g.battle(t1, t2, False).badges)
 
     # Trainer
     def test_trainer_get_name(self):
