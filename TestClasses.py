@@ -136,6 +136,13 @@ class ClassesModuleTest(unittest.TestCase):
                 score += 1
         self.assertGreater(score, 0)
 
+    def test_trainer_catch_incorrect(self):
+        score = 0
+        for _ in range(4):
+            if self.t.catch_incorrect(Pokemon("Jim", Type.NONE, Type.NONE, 10, 5, 30), Pokeball.MASTERBALL) is not None:
+                score += 1
+        self.assertGreater(score, 0)
+
     def test_trainer_add_pokemon(self):
         self.t.pokemon = [Pokemon("Jack", Type.NORMAL, Type.NONE, 10, 2, 50),
                         Pokemon("Jill", Type.NORMAL, Type.NONE, 10, 2, 50)]

@@ -69,6 +69,22 @@ class Trainer:
             print(pokemon.get_name() + " fled!")
             return None
 
+    def catch_incorrect(self, pokemon, pokeball):
+        # Get a random number 0 - 100
+        catch_rate = random.randint(0, 100)
+        # Add in the ball type
+        catch_rate += pokeball
+        print(self.name + " tries to throw a ball!")
+
+        # Try to catch it
+        if catch_rate < 100:  # This part is wrong
+            print(self.name + " Successfully caught " + pokemon.get_name() + "!")
+            self.add_pokemon(pokemon)
+            return pokemon
+        else:
+            print(pokemon.get_name() + " fled!")
+            return None
+
     def add_pokemon(self, pokemon):
         # Simple list append
         self.pokemon.append(pokemon)
