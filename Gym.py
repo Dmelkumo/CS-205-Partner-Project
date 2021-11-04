@@ -1,5 +1,4 @@
 from enums import Type
-from Trainer import Trainer
 
 
 class Gym:

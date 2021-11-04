@@ -3,7 +3,7 @@ import random
 
 class Pokemon:
     # Class var for all pokemon to share, this is the type effectiveness
-    # First index is attacker, 2nd index is defender typechart[i][j]
+    # First index is defender, 2nd index is attacker typechart[i][j]
     type_chart = [
         [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
         [1, .5, 2, 1, .5, .5, 1, 1, 2, 1, 1, .5, 2, 1, 1, 1, .5, .5, 1],
