@@ -17,10 +17,7 @@ def main():
         pokemon2.append(Pokemon("Ditto" + str(x), Type.NORMAL + x, Type.GHOST + x, 100, random.randint(1, 3), random.randint(80, 120)))
 
     trainers = []
-    """
-    for x in range(2):
-        trainers.append(Trainer("Jeff" + str(x), 11 + x, pokemon1, [Pokeball.GREATBALL], [Badge.SEANTOWN, Badge.SOMEWHERE], False))
-    """
+
     trainers.append(Trainer("Jeff", 11, pokemon1, [Pokeball.GREATBALL], [Badge.SEANTOWN, Badge.SOMEWHERE], False))
     trainers.append(Trainer("Bob", 15, pokemon2, [Pokeball.GREATBALL], [Badge.SEANTOWN, Badge.SOMEWHERE], False))
 
