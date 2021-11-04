@@ -57,21 +57,29 @@ class Gym:
             if trainer1.pokemon[i].get_spd() < trainer2.pokemon[j].get_spd():
                 if detailed_output:
                     print(trainer2.pokemon[j].get_name() + " attacks " + trainer1.pokemon[i].get_name())
-                trainer1.pokemon[i].take_damage(attack2, trainer2.pokemon[j].get_primary_type(), detailed_output)
+                dmg = trainer1.pokemon[i].take_damage(attack2, trainer2.pokemon[j].get_primary_type())
+                if detailed_output:
+                    print("It deals " + str(int(dmg)) + " damage!")
                 # Check to see if the other pokemon is dead
                 if trainer1.pokemon[i].get_hp() > 0:
                     if detailed_output:
                         print(trainer1.pokemon[i].get_name() + " attacks " + trainer2.pokemon[j].get_name())
-                    trainer2.pokemon[j].take_damage(attack1, trainer1.pokemon[i].get_primary_type(), detailed_output)
+                    dmg = trainer2.pokemon[j].take_damage(attack1, trainer1.pokemon[i].get_primary_type())
+                    if detailed_output:
+                        print("It deals " + str(int(dmg)) + " damage!")
             else:
                 if detailed_output:
                     print(trainer1.pokemon[i].get_name() + " attacks " + trainer2.pokemon[j].get_name())
-                trainer2.pokemon[j].take_damage(attack1, trainer1.pokemon[i].get_primary_type(), detailed_output)
+                dmg = trainer2.pokemon[j].take_damage(attack1, trainer1.pokemon[i].get_primary_type())
+                if detailed_output:
+                    print("It deals " + str(int(dmg)) + " damage!")
                 # Check to see if the other pokemon is dead
                 if trainer2.pokemon[j].get_hp() > 0:
                     if detailed_output:
                         print(trainer2.pokemon[j].get_name() + " attacks " + trainer1.pokemon[i].get_name())
-                    trainer1.pokemon[i].take_damage(attack2, trainer2.pokemon[j].get_primary_type(), detailed_output)
+                    dmg = trainer1.pokemon[i].take_damage(attack2, trainer2.pokemon[j].get_primary_type())
+                    if detailed_output:
+                        print("It deals " + str(int(dmg)) + " damage!")
 
             # Check if trainer1's pokemon has died and they have more
             if trainer1.pokemon[i].get_hp() <= 0:

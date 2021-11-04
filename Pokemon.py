@@ -81,13 +81,13 @@ class Pokemon:
     def attack(self):
         return int(random.randint(1, 10) * self.atk)
 
-    def take_damage(self, damage, other_type, detailed_output):
+    def take_damage(self, damage, other_type):
         # Get the effectiveness based off their types
-        effectiveness = self.type_chart[other_type][self.primary_type] * self.type_chart[other_type][self.secondary_type]
-        if detailed_output:
-            print("It deals " + str(int(damage * effectiveness)) + " damage!")
+        effectiveness = self.type_chart[self.primary_type][other_type] * self.type_chart[self.secondary_type][other_type]
         # Ensure it does not get negative hp
         if int(damage * effectiveness) >= self.get_hp():
             self.set_hp(0)
         else:
             self.set_hp(self.hp - int(damage * effectiveness))
+
+        return effectiveness * damage

@@ -9,6 +9,12 @@ import random
 class ClassesModuleTest(unittest.TestCase):
     def setUp(self):
         self.p = Pokemon("Pl0rqachu", Type.ELECTRIC, Type.NONE, 50, 2, 88)
+        self.p_ghost = Pokemon("Pl0rqachu", Type.GHOST, Type.NONE, 50, 2, 88)
+        self.p_water_rock = Pokemon("Pl0rqachu", Type.WATER, Type.ROCK, 50, 2, 88)
+        self.p_grass = Pokemon("Pl0rqachu", Type.GRASS, Type.NONE, 50, 2, 88)
+        self.p_poison = Pokemon("Pl0rqachu", Type.POISON, Type.NONE, 50, 2, 88)
+        self.p_ice = Pokemon("Pl0rqachu", Type.ICE, Type.NONE, 50, 2, 88)
+        self.p_dragon_dark = Pokemon("Pl0rqachu", Type.DRAGON, Type.DARK, 50, 2, 88)
         self.g = Gym("A very interesting gym", Badge.DAVIDCITY, [Trainer("David", 10, [Pokemon("David", Type.NORMAL, Type.NONE, 10, 2, 50)], [Pokeball.GREATBALL], [Badge.SOMEWHERE], False)])
         self.t = Trainer("Sean", 42, [Pokemon("Musume", Type.WATER, Type.FAIRY, 10, 2, 60)], [Pokeball.MASTERBALL, Pokeball.GREATBALL], [Badge.SEANTOWN], True)
 
@@ -44,9 +50,13 @@ class ClassesModuleTest(unittest.TestCase):
     def test_pokemon_attack(self):
         self.assertIn(self.p.attack(), range(2, 21))
     
-    #TODO
     def test_pokemon_take_damage(self):
-        pass
+        self.assertEqual(self.p_ghost.take_damage(1, Type.NORMAL), 0)
+        self.assertEqual(self.p_water_rock.take_damage(1, Type.FIRE), .25)
+        self.assertEqual(self.p_grass.take_damage(1, Type.ELECTRIC), .5)
+        self.assertEqual(self.p_poison.take_damage(1, Type.ICE), 1)
+        self.assertEqual(self.p_ice.take_damage(1, Type.FIGHTING), 2)
+        self.assertEqual(self.p_dragon_dark.take_damage(1, Type.FAIRY), 4)
 
     # Gym
     def test_gym_get_name(self):
